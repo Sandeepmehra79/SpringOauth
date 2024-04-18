@@ -231,11 +231,6 @@ public class SecurityConfig {
                             .stream()
                             .map(c -> c.replaceFirst("^ROLE_", ""))
                             .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
-                    for(String role : roles){
-                        System.out.println(role);
-                    }
-                    System.out.println("ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg");
-
                     claims.put("roles", roles);
                 });
             }
